@@ -5,6 +5,7 @@ uci commit luci
 
 uci set system.@system[0].timezone=CST-8
 uci set system.@system[0].zonename=Asia/Shanghai
+uci set system.@system[0].hostname=Openwrt-TD_TONY
 uci commit system
 
 uci set fstab.@global[0].anon_mount=1
@@ -56,5 +57,7 @@ echo 'hsts=0' > /root/.wgetrc
 
 rm -rf /tmp/luci-modulecache/
 rm -f /tmp/luci-indexcache
+
+echo 0xDEADBEEF > /etc/config/google_fu_mode
 
 exit 0
